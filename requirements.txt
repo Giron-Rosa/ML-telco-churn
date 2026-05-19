@@ -1,0 +1,30 @@
+# ─────────────────────────────────────────────────────────
+#  requirements.txt
+#  Proyecto: Predicción de Abandono de Clientes (Churn)
+#  Dataset : Telco Customer Churn — IBM Watson / Kaggle
+# ─────────────────────────────────────────────────────────
+
+# Manejo de datos
+pandas==2.2.2
+numpy==1.26.4
+
+# Visualización
+matplotlib==3.8.4
+seaborn==0.13.2
+
+# Machine Learning
+scikit-learn==1.4.2
+xgboost==2.0.3
+imbalanced-learn==0.12.2        # SMOTE para desbalance de clases
+
+# Interpretabilidad
+shap==0.45.0
+
+# Jupyter
+notebook==7.2.0
+ipykernel==6.29.4
+ipywidgets==8.1.3               # widgets interactivos en notebooks
+
+# Utilidades
+joblib==1.4.2                   # guardar modelos .pkl
+scipy==1.13.0                   # estadísticas

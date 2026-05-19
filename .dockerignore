@@ -1,0 +1,31 @@
+# ─────────────────────────────────────────────────────────
+#  .dockerignore
+#  Archivos que Docker NO debe copiar al contenedor
+# ─────────────────────────────────────────────────────────
+
+# Control de versiones
+.git
+.gitignore
+
+# Entornos virtuales Python (no los necesitamos en Docker)
+venv/
+env/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Checkpoints de Jupyter
+.ipynb_checkpoints/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Variables de entorno locales
+.env
+
+# Modelos pesados ya entrenados (se regeneran dentro del contenedor)
+outputs/modelos/*.pkl

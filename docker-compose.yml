@@ -1,0 +1,37 @@
+# ─────────────────────────────────────────────────────────
+#  docker-compose.yml
+#  Proyecto: Predicción de Abandono de Clientes (Churn)
+# ─────────────────────────────────────────────────────────
+
+version: '3.8'
+
+services:
+  churn:
+    # Nombre de la imagen que se construirá
+    image: churn-ml:latest
+
+    # Construir desde el Dockerfile en la carpeta actual
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    # Nombre del contenedor en ejecución
+    container_name: churn_proyecto
+
+    # Volúmenes: sincroniza carpetas locales ↔ contenedor
+    # Cambios en tu PC se reflejan en el contenedor y viceversa
+    volumes:
+      - ./src:/app/src            # scripts .py de cada etapa
+      - ./data:/app/data          # dataset CSV
+      - ./outputs:/app/outputs    # figuras .png y modelos .pkl
+      - ./models:/app/models      # modelos entrenados
+
+    # Variables de entorno
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1        # ver prints en tiempo real
+      - MPLBACKEND=Agg            # matplotlib sin pantalla (headless)
+
+    # bash interactivo por defecto — corres scripts manualmente
+    stdin_open: true
+    tty: true
