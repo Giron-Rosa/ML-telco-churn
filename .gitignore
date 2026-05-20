@@ -1,2 +1,6 @@
 # Entorno virtual
 venv/
+
+# Datasets 
+data/
+*.csv
