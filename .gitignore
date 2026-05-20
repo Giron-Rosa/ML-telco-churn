@@ -4,3 +4,7 @@ venv/
 # Datasets 
 data/
 *.csv
+
+# Modelos entrenados
+models/
+*.pkl
