@@ -8,3 +8,7 @@ data/
 # Modelos entrenados
 models/
 *.pkl
+
+# Imágenes generadas (se pueden regenerar ejecutando los scripts)
+outputs/figuras/
+*.png
